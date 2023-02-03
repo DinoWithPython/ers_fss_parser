@@ -1,0 +1,14 @@
+﻿Для установки модуля:
+pip install pyinstaller
+
+Для запаковки:
+pyinstaller -F(без разбития на папки) -i{icon}(указываем путь к иконке) {name file}
+pyinstaller --noconsole -F -i 1.ico interface_FSS.py
+pyinstaller --noconsole --runtime-tmpdir /OVSiPIS_delete_me -F -i 1.ico interface_FSS.py
+
+
+после чего добавляем данные в файл spec, в Analysis, 
+в datas=[('путь сейчас', 'путь куда')]
+('images/background.png', 'images/'), ('images/icon.ico', 'images/')
+и запускаем pyinstaller *.spec
+pyinstaller --noconsole -F -i 1.ico interface_FSS.spec
